@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura | Gamified Learning Zone</title>
+  <link rel="stylesheet" href="game-zone.css" />
+</head>
+<body>
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-image">
+      <img src="https://cdn-icons-png.flaticon.com/512/9245/9245090.png" alt="Gamified Learning">
+    </div>
+    <div class="hero-content">
+      <h1>Gamified Learning Zone</h1>
+      <p>
+        Aura transforms learning into an exciting journey!  
+        Earn XP for studying, collect badges for completing challenges, 
+        and climb the leaderboard with your friends — making education rewarding and fun.
+      </p>
+      <button class="btn">Enter Game Mode</button>
+    </div>
+  </section>
+
+  <!-- XP Progress Section -->
+  <section class="xp-section">
+    <h2>🏆 Your XP Progress</h2>
+    <div class="xp-container">
+      <div class="xp-circle">
+        <svg>
+          <circle cx="70" cy="70" r="70"></circle>
+          <circle cx="70" cy="70" r="70" id="xp"></circle>
+        </svg>
+        <div class="xp-number">
+          <h3>72%</h3>
+          <p>Level 5</p>
+        </div>
+      </div>
+      <div class="xp-text">
+        <p>Keep going! You’re close to unlocking your <b>“AI Master Learner”</b> badge.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Badges Section -->
+  <section class="badge-section">
+    <h2>🎯 Your Badges</h2>
+    <div class="badge-grid">
+      <div class="badge-card">
+        🧠
+        <h3>Quick Thinker</h3>
+        <p>Completed 10 AI quizzes in a row!</p>
+      </div>
+
+      <div class="badge-card">
+        ⚡
+        <h3>Speed Learner</h3>
+        <p>Finished a topic 2x faster than average.</p>
+      </div>
+
+      <div class="badge-card">
+        💎
+        <h3>Consistency Star</h3>
+        <p>Studied for 7 consecutive days!</p>
+      </div>
+
+      <div class="badge-card">
+        🏅
+        <h3>Top Scorer</h3>
+        <p>Ranked in the top 5 of your class leaderboard.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leaderboard -->
+  <section class="leaderboard">
+    <h2>🔥 Aura Leaderboard</h2>
+    <table>
+      <tr>
+        <th>Rank</th>
+        <th>Student</th>
+        <th>XP</th>
+      </tr>
+      <tr><td>1</td><td>Ganesh D</td><td>980 XP</td></tr>
+      <tr><td>2</td><td>Priya S</td><td>950 XP</td></tr>
+      <tr><td>3</td><td>Rahul M</td><td>920 XP</td></tr>
+      <tr><td>4</td><td>Arun K</td><td>880 XP</td></tr>
+      <tr><td>5</td><td>Sneha R</td><td>860 XP</td></tr>
+    </table>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Aura AI Study Assistant | Gamified Learning Zone</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    // Animate XP Circle
+    const circle = document.querySelector("#xp");
+    const radius = circle.r.baseVal.value;
+    const circumference = 2 * Math.PI * radius;
+
+    circle.style.strokeDasharray = `${circumference} ${circumference}`;
+    circle.style.strokeDashoffset = circumference;
+
+    const progress = 72; // %
+    const offset = circumference - (progress / 100) * circumference;
+    circle.style.strokeDashoffset = offset;
+  </script>
+</body>
+</html>

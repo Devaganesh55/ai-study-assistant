@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura | AI Mind Twin</title>
+  <link rel="stylesheet" href="ai mind twin.css" />
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>AI Mind Twin <span>(Personal Digital Clone)</span></h1>
+      <p>
+        The AI Mind Twin is your personalized digital version — it learns from your study style, tone,
+        and problem-solving approach to help you self-correct and perform smarter. 
+        Aura uses advanced machine learning to simulate your learning behavior, helping you 
+        understand mistakes before you make them.
+      </p>
+      <button class="btn">Try Aura</button>
+    </div>
+
+    <div class="hero-image">
+      <div class="circle-glow">
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712103.png" alt="AI Mind Twin" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Info Section -->
+  <section class="info-section">
+    <div class="info-card">
+      <h2>🧠 Learn Like You, But Better</h2>
+      <p>
+        Aura observes how you study, the type of mistakes you make, and how you solve problems.
+        It mirrors your methods to provide feedback that’s customized entirely to your learning pattern.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h2>⚡ Real-Time Twin Analysis</h2>
+      <p>
+        As you take quizzes or answer questions, your digital twin adapts in real-time,
+        showing areas where you could improve and suggesting better study techniques.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h2>🚀 Smarter Exam Preparation</h2>
+      <p>
+        Based on your twin’s performance, Aura predicts which topics you might struggle with in exams
+        and recommends personalized revision sessions.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Aura AI Study Assistant | Developed for Anna University Students</p>
+  </footer>
+
+  <!-- Animation Script -->
+  <script>
+    const items = document.querySelectorAll(".info-card, .hero-content, .circle-glow");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
+      });
+    });
+
+    items.forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>

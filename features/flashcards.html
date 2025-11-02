@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura | Content Summarization + Flashcards Generator</title>
+  <link rel="stylesheet" href="flashcards.css">
+</head>
+<body>
+<!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-image">
+      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712103.png" alt="AI Summarizer">
+    </div>
+    <div class="hero-content">
+      <h1>Content Summarization + Flashcards Generator</h1>
+      <p>
+        Aura helps you understand complex study material in seconds!  
+        Simply paste your notes or upload text, and Aura will summarize key ideas  
+        while generating quick flashcards to enhance memory and retention.
+      </p>
+      <button class="btn">Try Aura Summarizer</button>
+    </div>
+  </section>
+
+  <!-- Summarizer Section -->
+  <section class="summarizer">
+    <h2>🧩 Enter Your Study Material</h2>
+    <textarea id="inputText" placeholder="Paste your text or content here..."></textarea>
+    <button id="generateBtn" class="btn">Generate Summary & Flashcards</button>
+
+    <div id="outputSection" class="output-section">
+      <div class="summary-box">
+        <h3>📘 Summary</h3>
+        <p id="summaryText">Your summarized content will appear here...</p>
+      </div>
+
+      <div class="flashcard-grid">
+        <div class="flashcard"><h4>Flashcard 1</h4><p>Key concept...</p></div>
+        <div class="flashcard"><h4>Flashcard 2</h4><p>Key concept...</p></div>
+        <div class="flashcard"><h4>Flashcard 3</h4><p>Key concept...</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Aura AI Study Assistant | Content Summarization + Flashcards Generator</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const generateBtn = document.getElementById("generateBtn");
+    const summaryText = document.getElementById("summaryText");
+    const flashcards = document.querySelectorAll(".flashcard");
+
+    const summaries = [
+      "AI helps break down long notes into concise summaries highlighting the main ideas.",
+      "Machine learning identifies the most relevant keywords from your text.",
+      "Flashcards are auto-created with definitions, examples, and key terms for revision."
+    ];
+
+    const flashData = [
+      ["What is AI?", "AI is the simulation of human intelligence in machines."],
+      ["Why use summaries?", "They help you revise efficiently by focusing on key points."],
+      ["What are flashcards?", "Short question-answer cards that enhance active recall."]
+    ];
+
+    generateBtn.addEventListener("click", () => {
+      summaryText.innerText = summaries[Math.floor(Math.random() * summaries.length)];
+      flashcards.forEach((card, i) => {
+        card.querySelector("h4").innerText = flashData[i][0];
+        card.querySelector("p").innerText = flashData[i][1];
+        card.classList.add("show");
+      });
+      document.getElementById("outputSection").classList.add("visible");
+    });
+  </script>
+</body>
+</html>

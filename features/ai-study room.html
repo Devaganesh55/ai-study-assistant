@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura | Co-Study Room</title>
+  <link rel="stylesheet" href="ai-study room.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <!-- Co-Study Section -->
+  <section class="study-room">
+    <h1>👥 AI Study Room</h1>
+    <p>Join your friends in a shared study space — Aura monitors focus, energy, and collaboration progress in real time.</p>
+
+    <div class="room-container">
+      <!-- Left Panel: Live Friends List -->
+      <div class="friends-panel">
+        <h3>🎧 Online Friends</h3>
+        <ul class="friends-list">
+          <li><span class="status online"></span> Meera (Focused)</li>
+          <li><span class="status active"></span> Arjun (Taking Notes)</li>
+          <li><span class="status idle"></span> Dev (On Break)</li>
+          <li><span class="status online"></span> Sneha (Solving Quiz)</li>
+        </ul>
+        <button class="invite-btn">+ Invite Friend</button>
+      </div>
+
+      <!-- Center: Focus & Energy Tracker -->
+      <div class="main-dashboard">
+        <div class="focus-card">
+          <h2>🧠 Focus Level</h2>
+          <div class="circle" id="focus-circle">87%</div>
+          <p>Aura detects strong focus today! Keep up the consistency 💪</p>
+        </div>
+
+        <div class="energy-card">
+          <h2>⚡ Energy Level</h2>
+          <div class="energy-bar">
+            <div class="bar-fill" id="energy-bar"></div>
+          </div>
+          <p>Take a short 5-min break in 20 minutes to stay fresh 🌿</p>
+        </div>
+
+        <div class="progress-card">
+          <h2>📈 Group Progress</h2>
+          <div class="progress-circle" id="progress-circle">72%</div>
+          <p>Group target: Finish Mock Test 5 by 8 PM</p>
+        </div>
+      </div>
+
+      <!-- Right Panel: Group Chat -->
+      <div class="chat-box">
+        <div class="chat-header"><h3>💬 Group Chat</h3></div>
+        <div class="chat-body" id="chat-body">
+          <div class="bot-msg">👋 Welcome to the Co-Study Room!</div>
+          <div class="bot-msg">Aura: Remember, staying consistent boosts retention by 45%!</div>
+        </div>
+        <div class="chat-input">
+          <input type="text" id="user-input" placeholder="Type a message..." />
+          <button onclick="sendMessage()">Send</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Aura AI Study Assistant | Learn Together, Grow Smarter 🤍</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    function sendMessage() {
+      const input = document.getElementById("user-input");
+      const chatBody = document.getElementById("chat-body");
+
+      if (input.value.trim() === "") return;
+
+      const userMsg = document.createElement("div");
+      userMsg.className = "user-msg";
+      userMsg.textContent = input.value;
+      chatBody.appendChild(userMsg);
+
+      const botMsg = document.createElement("div");
+      botMsg.className = "bot-msg";
+      botMsg.textContent = "Aura: Nice! Let's log your progress.";
+      chatBody.appendChild(botMsg);
+
+      input.value = "";
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    // Animate focus and energy levels
+    window.onload = () => {
+      const energyBar = document.getElementById("energy-bar");
+      energyBar.style.width = "85%";
+    };
+  </script>
+</body>
+</html>

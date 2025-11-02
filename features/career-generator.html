@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura | AI Resume & Career Path Generator</title>
+  <link rel="stylesheet" href="career-generator.css" />
+</head>
+<body>
+<!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-image">
+      <img src="https://cdn-icons-png.flaticon.com/512/10298/10298683.png" alt="AI Resume Generator">
+    </div>
+
+    <div class="hero-content">
+      <h1>AI Resume & Career Path Generator</h1>
+      <p>
+        Aura automatically builds your resume, highlights your strengths, and 
+        recommends career paths based on your academic data, projects, and interests. 
+        It’s your personal career advisor powered by AI.
+      </p>
+      <button class="btn">Start Career Builder</button>
+    </div>
+  </section>
+
+  <!-- Resume Builder Section -->
+  <section class="career-section">
+    <h2>🎯 Build Your AI Resume Instantly</h2>
+    <form class="career-form">
+      <input type="text" id="name" placeholder="Enter your name" />
+      <input type="text" id="skills" placeholder="Enter your top 3 skills (e.g., Python, VLSI, ML)" />
+      <input type="text" id="interest" placeholder="Enter your field of interest (e.g., Robotics, Data Science)" />
+      <button type="button" id="generateBtn" class="btn">Generate Career Path</button>
+    </form>
+
+    <div id="careerOutput" class="career-output">
+      Your personalized AI resume summary and career suggestion will appear here...
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Aura AI Study Assistant | AI Resume & Career Path Generator</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const suggestions = {
+      "data science": [
+        "✨ Career Path: Data Analyst → Data Scientist → AI Engineer",
+        "📘 Recommended Certifications: Python for Data Science, TensorFlow Developer, AWS ML Foundations",
+        "💡 Resume Tip: Add a ‘Projects’ section showcasing your analytical models or visual dashboards."
+      ],
+      "robotics": [
+        "🤖 Career Path: Embedded Engineer → Robotics Developer → AI Automation Specialist",
+        "📘 Recommended Certifications: ROS Mastery, IoT & Embedded C, Python for Robotics",
+        "💡 Resume Tip: Include control system or automation projects with simulation visuals."
+      ],
+      "vlsi": [
+        "⚡ Career Path: Design Verification Engineer → ASIC Developer → Chip Design Architect",
+        "📘 Recommended Certifications: VHDL/Verilog, Cadence Tools, Physical Design Essentials",
+        "💡 Resume Tip: Highlight lab experience and any FPGA-based project prototypes."
+      ],
+      "web development": [
+        "💻 Career Path: Frontend Developer → Full Stack Engineer → Product Architect",
+        "📘 Recommended Certifications: React.js, Node.js, UI/UX Design, Cloud Hosting",
+        "💡 Resume Tip: Add live project URLs and GitHub portfolio links."
+      ]
+    };
+
+    document.getElementById("generateBtn").addEventListener("click", () => {
+      const interest = document.getElementById("interest").value.toLowerCase().trim();
+      const outputBox = document.getElementById("careerOutput");
+
+      if (suggestions[interest]) {
+        outputBox.innerHTML = `
+          <h3>Hi ${document.getElementById("name").value || "Student"} 👋</h3>
+          <p>${suggestions[interest][0]}</p>
+          <p>${suggestions[interest][1]}</p>
+          <p>${suggestions[interest][2]}</p>
+        `;
+        outputBox.classList.add("show");
+      } else {
+        outputBox.innerHTML = "⚠️ Sorry, no predefined path found for that field. Aura will learn and suggest soon!";
+      }
+    });
+  </script>
+</body>
+</html>

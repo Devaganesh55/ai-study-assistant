@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura | AI Lab & Project Assistant</title>
+  <link rel="stylesheet" href="lab-assistant.css" />
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-image">
+      <img src="https://cdn-icons-png.flaticon.com/512/5333/5333053.png" alt="AI Lab Assistant">
+    </div>
+    <div class="hero-content">
+      <h1>AI Lab & Project Assistant</h1>
+      <p>
+        Aura helps you design, simulate, and execute engineering lab experiments 
+        and mini-projects. From circuit simulation to linking IEEE papers, Aura 
+        brings smart innovation directly into your workflow.
+      </p>
+      <button class="btn">Start Project Mode</button>
+    </div>
+  </section>
+
+  <!-- Features Cards -->
+  <section class="lab-features">
+    <h2>🔧 Your Smart Project Tools</h2>
+    <div class="card-grid">
+      <div class="lab-card">
+        💡
+        <h3>Circuit Simulation</h3>
+        <p>Instantly simulate electronic circuits and visualize current flow in real-time.</p>
+      </div>
+
+      <div class="lab-card">
+        🧠
+        <h3>AI Project Idea Generator</h3>
+        <p>Generate creative mini and major project ideas tailored to your department and skill level.</p>
+      </div>
+
+      <div class="lab-card">
+        📑
+        <h3>IEEE Paper Linker</h3>
+        <p>Find relevant IEEE research papers connected to your project idea.</p>
+      </div>
+
+      <div class="lab-card">
+        💻
+        <h3>Code Assistant</h3>
+        <p>Write, debug, and test embedded code with Aura’s AI coding support.</p>
+      </div>
+
+      <div class="lab-card">
+        🔍
+        <h3>Hardware Debugger</h3>
+        <p>Detects faults in your circuits or microcontroller setup and provides quick fixes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Idea Generator -->
+  <section class="idea-generator">
+    <h2>🤖 Generate an AI Project Idea</h2>
+    <p>Click below to get a personalized AI-driven idea for your next innovation!</p>
+    <button id="ideaBtn" class="btn">Generate Idea</button>
+    <div id="ideaBox" class="idea-box">Your AI-generated project idea will appear here...</div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Aura AI Study Assistant | AI Lab & Project Assistant</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const ideas = [
+      "IoT-Based Smart Energy Monitoring using ESP32",
+      "AI-Powered Traffic Signal Control System",
+      "Voice-Controlled Robotic Arm using Raspberry Pi",
+      "Machine Learning-Based Fault Detection in Solar Panels",
+      "AI Chatbot for Lab Experiment Guidance"
+    ];
+
+    document.getElementById("ideaBtn").addEventListener("click", () => {
+      const randomIdea = ideas[Math.floor(Math.random() * ideas.length)];
+      const ideaBox = document.getElementById("ideaBox");
+      ideaBox.innerText = "💡 " + randomIdea;
+      ideaBox.classList.add("show");
+    });
+  </script>
+</body>
+</html>

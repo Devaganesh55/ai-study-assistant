@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura | AI Internship & Job Finder</title>
+  <link rel="stylesheet" href="job-finder.css" />
+</head>
+<body>
+  <!-- Job Finder Section -->
+  <section class="job-section">
+    <h1>💼 AI Internship & Job Finder</h1>
+    <p>Discover personalized internships and jobs tailored to your skills, career goals, and learning progress.</p>
+
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search internships or job titles..." />
+      <button onclick="searchJobs()">Find Now</button>
+    </div>
+
+    <div class="job-container" id="jobContainer">
+      <!-- Job Cards -->
+      <div class="job-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1055/1055646.png" alt="AI Engineer">
+        <h3>AI Engineer Intern</h3>
+        <p><strong>Company:</strong> Infosys | <strong>Location:</strong> Chennai</p>
+        <p>Work on deep learning projects and real-time NLP applications with senior AI mentors.</p>
+        <button class="apply-btn">Apply Now</button>
+      </div>
+
+      <div class="job-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/4472/4472516.png" alt="Data Analyst">
+        <h3>Data Analyst Intern</h3>
+        <p><strong>Company:</strong> TCS | <strong>Location:</strong> Bangalore</p>
+        <p>Analyze datasets, visualize insights, and optimize models using Python and Power BI.</p>
+        <button class="apply-btn">Apply Now</button>
+      </div>
+
+      <div class="job-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2886/2886665.png" alt="ML Researcher">
+        <h3>Machine Learning Research Intern</h3>
+        <p><strong>Company:</strong> Google Research | <strong>Location:</strong> Remote</p>
+        <p>Assist in ML model experimentation, dataset analysis, and performance optimization.</p>
+        <button class="apply-btn">Apply Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skill Match Section -->
+  <section class="skill-match">
+    <h2>🎯 AI Skill Match Insights</h2>
+    <div class="skills">
+      <div class="skill-card">
+        <h4>Python</h4>
+        <div class="progress"><div class="bar" style="width: 90%;"></div></div>
+        <p>Strong proficiency — Excellent for Data Science roles</p>
+      </div>
+      <div class="skill-card">
+        <h4>Machine Learning</h4>
+        <div class="progress"><div class="bar" style="width: 80%;"></div></div>
+        <p>Good — Fit for Research and AI Dev positions</p>
+      </div>
+      <div class="skill-card">
+        <h4>Communication</h4>
+        <div class="progress"><div class="bar" style="width: 70%;"></div></div>
+        <p>Moderate — Improve for client-based roles</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Aura AI Study Assistant | Empowering Students into AI Careers 🚀</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    function searchJobs() {
+      const query = document.getElementById("searchInput").value.toLowerCase();
+      const cards = document.querySelectorAll(".job-card");
+      cards.forEach(card => {
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        card.style.display = title.includes(query) ? "block" : "none";
+      });
+    }
+
+    const applyButtons = document.querySelectorAll(".apply-btn");
+    applyButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        alert("✅ Application submitted successfully! Aura will track your progress.");
+      });
+    });
+  </script>
+</body>
+</html>

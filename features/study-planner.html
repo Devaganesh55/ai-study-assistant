@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura | Personalized Learning Path</title>
+  <link rel="stylesheet" href="study-planner.css" />
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-image">
+      <img src="https://cdn-icons-png.flaticon.com/512/9385/9385900.png" alt="Dynamic Study Planner" />
+    </div>
+
+    <div class="hero-content">
+      <h1>Personalized Learning Path <span>+ Dynamic Study Planner</span></h1>
+      <p>
+        Aura designs a customized learning roadmap based on your syllabus, goals, and performance trends.
+        It dynamically adjusts your daily study plan — balancing time, topics, and focus areas to ensure
+        maximum results with minimal stress.
+      </p>
+      <button class="btn">Generate My Study Path</button>
+    </div>
+  </section>
+
+  <!-- Study Timeline -->
+  <section class="timeline-section">
+    <h2>📅 Your Smart Study Timeline</h2>
+    <p>Aura intelligently adapts your schedule every day based on progress and exam proximity.</p>
+
+    <div class="timeline">
+      <div class="timeline-card">
+        <h3>Day 1 - Basics Review</h3>
+        <p>Focus on foundational concepts and quick quizzes to identify weak areas.</p>
+      </div>
+
+      <div class="timeline-card">
+        <h3>Day 2 - Practice Mode</h3>
+        <p>Aura assigns mock tests and small projects to reinforce learning.</p>
+      </div>
+
+      <div class="timeline-card">
+        <h3>Day 3 - Concept Visualization</h3>
+        <p>Interactive visual aids and flashcards make tough topics simple and memorable.</p>
+      </div>
+
+      <div class="timeline-card">
+        <h3>Day 4 - Adaptive Revision</h3>
+        <p>Topics you missed or scored low in are automatically re-added to the plan.</p>
+      </div>
+
+      <div class="timeline-card">
+        <h3>Day 5 - Focus Exam Simulation</h3>
+        <p>Aura simulates real exam conditions and provides performance analytics.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Smart Progress -->
+  <section class="progress-section">
+    <h2>📊 Dynamic Progress Tracking</h2>
+    <div class="progress-dashboard">
+      <div class="progress-card">
+        <h3>Weekly Consistency</h3>
+        <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+        <p>90% of goals achieved</p>
+      </div>
+      <div class="progress-card">
+        <h3>Focus Efficiency</h3>
+        <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
+        <p>AI reports strong focus trends</p>
+      </div>
+      <div class="progress-card">
+        <h3>Completion Forecast</h3>
+        <div class="progress-bar"><div class="progress" style="width: 68%;"></div></div>
+        <p>On track for exam readiness!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Aura AI Study Assistant | Personalized Learning Path & Dynamic Study Planner</p>
+  </footer>
+
+  <!-- Animation Script -->
+  <script>
+    const elements = document.querySelectorAll(".hero-content, .hero-image, .timeline-card, .progress-card");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
+      });
+    });
+
+    elements.forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>

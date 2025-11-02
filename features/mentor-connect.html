@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura | AI Mentor Connect</title>
+  <link rel="stylesheet" href="mentor-connect.css" />
+</head>
+<body>
+<!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-image">
+      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712103.png" alt="AI Mentor Connect">
+    </div>
+    <div class="hero-content">
+      <h1>AI Mentor Connect</h1>
+      <p>
+        Aura pairs you with intelligent AI mentors and real human experts who guide you through 
+        academics, projects, and career planning — offering feedback, motivation, and personalized advice.
+      </p>
+      <button id="findMentor" class="btn">Find My Mentor</button>
+    </div>
+  </section>
+
+  <!-- Mentor Cards -->
+  <section class="mentors">
+    <h2>🤝 Meet Your Mentors</h2>
+    <div class="mentor-grid">
+      <div class="mentor-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712121.png" alt="AI Mentor">
+        <h3>Aura Virtual Mentor</h3>
+        <p>Available 24/7 to analyze your progress and suggest smart study strategies.</p>
+        <button class="connect-btn">Connect</button>
+      </div>
+
+      <div class="mentor-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/4829/4829760.png" alt="Human Mentor">
+        <h3>Dr. Meera Raman</h3>
+        <p>Professor (ECE Dept) | Anna University</p>
+        <button class="connect-btn">Schedule Session</button>
+      </div>
+
+      <div class="mentor-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="Industry Mentor">
+        <h3>Rahul Verma</h3>
+        <p>AI Engineer | Google India</p>
+        <button class="connect-btn">Connect</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Suggestion Section -->
+  <section class="suggestion-box" id="suggestionBox">
+    <h2>✨ Aura’s Smart Mentor Match</h2>
+    <p><b>Matched Mentor:</b> Dr. Meera Raman (AI & IoT Specialist)</p>
+    <p><b>Availability:</b> Tue & Fri (7 PM - 9 PM)</p>
+    <p><b>Motivational Quote:</b> “Your focus determines your future — let’s build it step by step.”</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Aura AI Study Assistant | AI Mentor Connect</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const suggestionBox = document.getElementById("suggestionBox");
+    const button = document.getElementById("findMentor");
+
+    button.addEventListener("click", () => {
+      suggestionBox.classList.add("show");
+      window.scrollTo({ top: suggestionBox.offsetTop, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura | Multilingual AI Tutor</title>
+  <link rel="stylesheet" href="multilingual-tutor.css" />
+</head>
+<body>
+
+  <!-- Tutor Section -->
+  <section class="tutor-section">
+    <h1>🧠 Multilingual AI Tutor</h1>
+    <p>Chat and learn in your preferred language — Tamil, English, or Hindi.</p>
+
+    <div class="language-selector">
+      <label for="language">Choose Language:</label>
+      <select id="language" onchange="changeLanguage()">
+        <option value="en">🇬🇧 English</option>
+        <option value="ta">🇮🇳 Tamil</option>
+    
+      </select>
+    </div>
+
+    <div class="chat-container">
+      <div class="chat-box" id="chatBox">
+        <div class="bot-msg">👋 Hello! I am Aura, your multilingual AI tutor. How can I help you today?</div>
+      </div>
+      <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Type your question..." />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Aura AI Study Assistant | Learn Smarter, in Any Language 🌍</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const translations = {
+      en: {
+        greet: "👋 Hello! I am Aura, your multilingual AI tutor. How can I help you today?",
+        response: "Here’s your explanation in English!"
+      },
+      ta: {
+        greet: "👋 வணக்கம்! நான் ஆரா, உங்களுடைய பன்மொழி கற்றல் உதவியாளர். இன்று உங்களுக்கு என்ன உதவி செய்யலாம்?",
+        response: "இதோ உங்களுக்கான விளக்கம் தமிழில்!"
+      },
+
+    };
+
+    let currentLang = "en";
+
+    function changeLanguage() {
+      const langSelect = document.getElementById("language");
+      currentLang = langSelect.value;
+      const chatBox = document.getElementById("chatBox");
+      chatBox.innerHTML = `<div class="bot-msg">${translations[currentLang].greet}</div>`;
+    }
+
+    function sendMessage() {
+      const input = document.getElementById("userInput");
+      const chatBox = document.getElementById("chatBox");
+      if (input.value.trim() === "") return;
+
+      // User message
+      const userMsg = document.createElement("div");
+      userMsg.className = "user-msg";
+      userMsg.textContent = input.value;
+      chatBox.appendChild(userMsg);
+
+      // AI reply (based on selected language)
+      const botMsg = document.createElement("div");
+      botMsg.className = "bot-msg";
+      botMsg.textContent = translations[currentLang].response;
+      chatBox.appendChild(botMsg);
+
+      input.value = "";
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  </script>
+</body>
+</html>

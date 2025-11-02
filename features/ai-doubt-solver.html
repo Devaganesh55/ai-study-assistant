@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura | AI Doubt Solver</title>
+  <link rel="stylesheet" href="ai-doubt-solver.css" />
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-image">
+      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712103.png" alt="AI Doubt Solver" />
+    </div>
+
+    <div class="hero-content">
+      <h1>AI Doubt Solver <span>with Visual + Voice Explanation</span></h1>
+      <p>
+        Ask Aura your study doubts through text, voice, or by uploading an image — and receive instant step-by-step 
+        visual and spoken explanations. Perfect for engineering subjects, diagrams, and equations.
+      </p>
+      <button class="btn">Try Doubt Solver</button>
+    </div>
+  </section>
+
+  <!-- Doubt Solver Simulation -->
+  <section class="solver-section">
+    <h2>💬 Ask Your Doubt</h2>
+
+    <div class="solver-box">
+      <textarea placeholder="Type your question here..."></textarea>
+      <div class="solver-actions">
+        <button class="mic-btn">🎤 Voice Input</button>
+        <button class="solve-btn">🔍 Get Answer</button>
+      </div>
+    </div>
+
+    <div class="ai-response">
+      <div class="response-card">
+        <h3>✨ AI Visual Explanation</h3>
+        <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Concept Illustration" />
+        <p>
+          Here's how it works: <br>
+          Step 1️⃣ Identify key formula or diagram.<br>
+          Step 2️⃣ Visualize each part of the concept.<br>
+          Step 3️⃣ Combine steps to form the final solution.<br><br>
+          🔊 <i>“Let me explain this step-by-step...”</i>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Aura AI Study Assistant | AI Doubt Solver Feature</p>
+  </footer>
+
+  <!-- Animation Script -->
+  <script>
+    const elements = document.querySelectorAll(".hero-content, .hero-image, .solver-box, .ai-response");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
+      });
+    });
+
+    elements.forEach((el) => observer.observe(el));
+
+    // Simulate AI response
+    document.querySelector(".solve-btn").addEventListener("click", () => {
+      document.querySelector(".ai-response").classList.add("show");
+    });
+  </script>
+</body>
+</html>

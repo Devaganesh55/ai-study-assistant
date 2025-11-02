@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura | Pricing Plans</title>
+  <link rel="stylesheet" href="pricing.css" />
+</head>
+<body>
+<!-- Pricing Section -->
+  <section class="pricing-section">
+    <h1>💎 Choose Your Plan</h1>
+    <p>Select the best Aura plan for your study goals and unlock smarter learning with AI.</p>
+
+    <div class="pricing-container">
+      <!-- Free Plan -->
+      <div class="card">
+        <h2>Free Plan</h2>
+        <h3>₹0 / month</h3>
+        <ul>
+          <li>Basic AI Chat Tutor</li>
+          <li>Limited Flashcards</li>
+          <li>Access to Study Planner (Trial)</li>
+        </ul>
+        <button class="pay-btn" onclick="startPayment('free','none')">Get Started</button>
+      </div>
+
+      <!-- Premium Plan -->
+      <div class="card premium">
+        <h2>Premium Plan</h2>
+        <h3>₹199 / semester</h3>
+        <ul>
+          <li>All AI Tools Unlocked</li>
+          <li>Dynamic Study Planner</li>
+          <li>AI Mind Twin + Mentor Connect</li>
+          <li>Priority Support</li>
+        </ul>
+        <button class="pay-btn" onclick="startPayment('premium','gpay')">Pay with GPay</button>
+      </div>
+
+      <!-- Campus Plan -->
+      <div class="card campus">
+        <h2>Campus Plan</h2>
+        <h3>₹999 / semester</h3>
+        <ul>
+          <li>Team Access for Students</li>
+          <li>Campus Dashboard</li>
+          <li>Collaboration Tools</li>
+          <li>Dedicated AI Mentor</li>
+        </ul>
+        <button class="pay-btn" onclick="startPayment('campus','phonepe')">Pay with GPay</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <br><br><br><p>© 2025 Aura AI Study Assistant | Empowering Smarter Learning</p>
+  </footer>
+
+</body>
+</html>
